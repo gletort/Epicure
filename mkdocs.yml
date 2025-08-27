@@ -1,0 +1,70 @@
+site_name: EpiCure Documentation
+site_url: https://gletort.github.io/Epicure/
+repo_url: https://github.com/gletort/Epicure/
+
+nav:
+    - Home: index.md
+    - Installation: Installation.md
+
+theme:
+    logo: imgs/epicure_logo.png
+    name: material
+    features:
+        - navigation.footer
+        #- navigation.tabs
+        #- navigation.tabs.sticky
+        - navigation.path
+        - navigation.top
+        - navigation.expand
+        - toc.integrate
+    color_mode: dark
+    palette:
+        # Palette toggle for dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: white
+          accent: teal
+          toggle:
+            icon: material/lightbulb
+            name: Switch to light mode
+        # Palette toggle for light mode
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: white
+          accent: dark blue
+          toggle:
+            icon: material/lightbulb-outline
+            name: Switch to dark mode
+
+    icon:
+        annotation: material/plus-circle-outline
+        admonition:
+            note: fontawesome/solid/note-sticky
+            example: fontawesome/solid/sliders
+            abstract: fontawesome/solid/puzzle-piece
+            bug: fontawesome/solid/bug
+            tip: fontawesome/solid/keyboard
+            warning: fontawesome/solid/triangle-exclamation
+
+
+## display code options
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - admonition
+  - tables
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
