@@ -8,6 +8,7 @@ target/
 o# OS
 .DS_Store
 
+.github/
 
 __pycache__/
 
