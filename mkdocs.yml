@@ -7,9 +7,10 @@ nav:
     - Installation: Installation.md
     - Usage:
         - Start EpiCure: Start-epicure.md
+        - Display: Display.md
     - Additionnal options:
         - Concatenate movies: Concatenate-epicured-movies.md
-        - Segment option: Segment-options.md
+        - Segment option: Segment-option.md
 
 theme:
     logo: imgs/epicure_logo.png
