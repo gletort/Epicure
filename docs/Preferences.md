@@ -24,7 +24,7 @@ For this, open the `Preferences` option in `Napari>Plugins>EpiCure>Edit preferen
 You can redefine EpiCure shortcuts to put your favorite keys instead of EpiCure default ones (reminder, you can see the full list of EpiCure shortcuts by pressing <kbd>a</kbd> when EpiCure is open).
 A panel will open on the right side, with a list of shortcuts for each type of EpiCure action (General, Edit, Track, Suspect, Output, Display), under the onglet `Shortcuts Config.`
 
-![preferences interface](./imgs/preferences)
+![preferences interface](./imgs/preferences.png)
 
 Select the one you wish to edit, change the corresponding shortcut by putting your favorite <kbd>key</kbd> instead of the default one.
 
