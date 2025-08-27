@@ -1,0 +1,30 @@
+# MkDocs documentation
+/site/
+# PyBuilder
+target/
+
+# IPython Notebook
+.ipynb_checkpoints
+o# OS
+.DS_Store
+
+
+__pycache__/
+
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+tmp/
+.eggs/
+lib/
+lib64/
+parts/
+src/_tests/files/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
