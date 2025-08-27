@@ -5,6 +5,11 @@ repo_url: https://github.com/gletort/Epicure/
 nav:
     - Home: index.md
     - Installation: Installation.md
+    - Usage:
+        - Start EpiCure: Start-epicure.md
+    - Additionnal options:
+        - Concatenate movies: Concatenate-epicured-movies.md
+        - Segment option: Segment-options.md
 
 theme:
     logo: imgs/epicure_logo.png
