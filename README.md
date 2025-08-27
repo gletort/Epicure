@@ -1,12 +1,12 @@
 # EpiCure
 
-[![License BSD-3](https://img.shields.io/pypi/l/epicure.svg?color=green)](https://github.com/gletort/epicure/-/blob/main/LICENSE)
+[![License BSD-3](https://img.shields.io/pypi/l/epicure.svg?color=green)](https://github.com/gletort/Epicure/-/blob/main/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/epicure.svg?color=green)](https://pypi.org/project/epicure)
 [![Python Version](https://img.shields.io/pypi/pyversions/epicure.svg?color=green)](https://python.org)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/epicure)](https://napari-hub.org/plugins/epicure)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13952184.svg)](https://doi.org/10.5281/zenodo.13952184)
 
-![EpiCure logo](https://github.com/gletort/epicure/-/raw/main/docs/imgs/epicure_logo.png?raw=True "EpiCure logo")
+![EpiCure logo](https://github.com/gletort/Epicure/-/raw/main/docs/imgs/epicure_logo.png?raw=True "EpiCure logo")
 
 **Napari plugin to ease manual correction of epithelia segmentation in movies.**
 
@@ -24,7 +24,7 @@ When a correction is done at a given frame, EpiCure relink the track to adjust f
  > **Documentation in the [wiki](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Home)**
 
 <p align="center">
-![EpiCure interface](https://github.com/gletort/epicure/-/raw/main/docs/imgs/EpiGen.png?raw=True "EpiCure interface")
+![EpiCure interface](https://github.com/gletort/Epicure/-/raw/main/docs/imgs/EpiGen.png?raw=True "EpiCure interface")
 </p>
 
 ## Installation
