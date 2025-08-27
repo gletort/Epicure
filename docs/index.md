@@ -13,7 +13,7 @@ The first file to choose is the movie containing the epithelial staining.
 It should be _2D(+time), .tif file_. 
 
 The second file is the segmentation of this movie (also a `.tif` file). It can be a binarized file of the junctions (skeletonized) or a labelled file (each cell is filled by a unique number).
-_Note that if you haven't done the segmentation yet, there's an [additional option](#segment-with-epyseg) in EpiCure to directly run [EpySeg](https://github.com/baigouy/EPySeg) on the loaded movie._ 
+_Note that if you haven't done the segmentation yet, there's an [additional option](./Segment-option.md) in EpiCure to directly run [EpySeg](https://github.com/baigouy/EPySeg) on the loaded movie._ 
 
 Additionnal options are available to tune it to your usage, please see [Start epicure](./Start-epicure.md) page for more informations.
 
@@ -51,7 +51,8 @@ For this, open the `Preferences` option in `Napari>Plugins>EpiCure>Edit preferen
 Choose the shortcuts to use and save them. 
 See the [Preferences](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Preferences) page for more information.
 
-:heavy_exclamation_mark: the new shortcut configuration will be active only at the next EpiCure session. If you already have an EpiCure opened, restart it to apply the new shortcuts.
+??? warning "Restart to activate shortcut configuration" 
+	The new shortcut configuration will be active only at the next EpiCure session. If you already have an EpiCure opened, restart it to apply the new shortcuts.
 
 
 ### General options

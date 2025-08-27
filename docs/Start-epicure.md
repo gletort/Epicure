@@ -1,3 +1,5 @@
+!!! abstract "Start EpiCure: load the movies and metadata"
+    _Choose `Start epicure` in Napari `Plugins>Epicure` to open it._ 
 
 ## Loading the movies
 
