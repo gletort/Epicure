@@ -29,10 +29,10 @@ When you have selected the two files, you can start editing by clicking on the `
 * [Inspect](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Inspect): determine cells suspicious of having an error, based on a few morphological or track features, or handle cellular events as divisions :mag: 
 * [Track](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Track): links the labels from one frame to another to reconstruct the whole cell track. 
 * [Output](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Output): measure/display cell or track features, export results to other plugins/softwares :outbox_tray: 
-* [Display](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Display): display additional informations (segmentation skeleton, general informations...) or a spatial grid :mag:  
-* [Preferences](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Preferences): to set-up user-specific preferences as keyboard shortcuts :capital_abcd: 
+* [Display](./Display.md): display additional informations (segmentation skeleton, general informations...) or a spatial grid :window:  
+* [Preferences](./Preferences.md): to set-up user-specific preferences as keyboard shortcuts :capital_abcd: 
 
-# General principle
+## General principle
 
 In EpiCure, the segmented cells are represented as labels: each cell is assigned a unique number, that will be conserved in all time frames that the cell is present. All pixels belonging to the cell are assigned to its value. 
 They are represented in EpiCure in a Napari Label layer called `Segmentation`.
@@ -49,7 +49,7 @@ EpiCure shortcuts are linked to the `Segmentation` layer, so it should be select
 You can redefine EpiCure shortcuts to put your favorite keys instead of EpiCure default ones.
 For this, open the `Preferences` option in `Napari>Plugins>EpiCure>Edit preferences`.
 Choose the shortcuts to use and save them. 
-See the [Preferences](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Preferences) page for more information.
+See the [Preferences](./Preferences.md) page for more information.
 
 ??? warning "Restart to activate shortcut configuration" 
 	The new shortcut configuration will be active only at the next EpiCure session. If you already have an EpiCure opened, restart it to apply the new shortcuts.
