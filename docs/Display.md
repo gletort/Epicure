@@ -3,7 +3,7 @@
 
 You can manage the display with several shortcuts to be able to rapidly switch the current view, but also some general options are available in the interface in the `Display` onglet.
 
-
+* `Measure line` option, can be started with <kbd>Control+i</kbd> to measure the length of a drawn line. Press the shortcut, then draw the line by left clicking and dragging the line. When you release the mouse button, the line will disappear and the measure of its length will be displayed in the top left part of the window.
 * `Show summary` opens a pop-up text window that contains general information about the movie as the size of the movie, the number of cells, the average cell area, the average track duration..
 * `Side by side view`: by default all layer are overlaid. To split the layers in two side by side view, select the `side-by-side view` parameter and choose the views to be placed horizontally or vertically. Uncheck it to be back to a single view.
 * `Set current settings as default`: save all the current settings (display parameters, option parameters) in the settings file so that next time EpiCure is loaded, it will be in the same state. 
