@@ -6,7 +6,7 @@
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/epicure)](https://napari-hub.org/plugins/epicure)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13952184.svg)](https://doi.org/10.5281/zenodo.13952184)
 
-![EpiCure logo](https://github.com/gletort/Epicure/-/raw/main/docs/imgs/epicure_logo.png?raw=True "EpiCure logo")
+![EpiCure logo](https://github.com/gletort/Epicure/blob/main/docs/imgs/epicure_logo.png "EpiCure logo")
 
 **Napari plugin to ease manual correction of epithelia segmentation in movies.**
 
