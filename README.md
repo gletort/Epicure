@@ -25,7 +25,7 @@ When a correction is done at a given frame, EpiCure relink the track to adjust f
  > **See the full [documentation here](https://gletort.github.io/Epicure/)**
 
 <p align="center">
-![EpiCure interface](https://github.com/gletort/Epicure/-/raw/main/docs/imgs/EpiGen.png?raw=True "EpiCure interface")
+![EpiCure interface](https://github.com/gletort/Epicure/blob/main/docs/imgs/EpiGen.png "EpiCure interface")
 </p>
 
 ## Installation
