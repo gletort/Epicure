@@ -7,6 +7,7 @@ nav:
     - Installation: Installation.md
     - Usage:
         - Start EpiCure: Start-epicure.md
+        - Edit: Edit.md
         - Display: Display.md
         - Preferences: Preferences.md
     - Additionnal options:
