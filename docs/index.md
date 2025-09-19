@@ -25,10 +25,10 @@ Then click on `START CURE` to start the main process.
 
 When you have selected the two files, you can start editing by clicking on the `Start cure` button. It will open the two movies and open the interface that let you choose the steps to do:
 
-* [Edit](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Edit): clean the segmentation or correct manually errors through EpiCure options :wrench: 
-* [Inspect](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Inspect): determine cells suspicious of having an error, based on a few morphological or track features, or handle cellular events as divisions :mag: 
-* [Track](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Track): links the labels from one frame to another to reconstruct the whole cell track. 
-* [Output](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Output): measure/display cell or track features, export results to other plugins/softwares :outbox_tray: 
+* [Edit](.//Edit.md): clean the segmentation or correct manually errors through EpiCure options :wrench: 
+* [Inspect](./Inspect.md): determine cells suspicious of having an error, based on a few morphological or track features, or handle cellular events as divisions :mag: 
+* [Track](./Track/md): links the labels from one frame to another to reconstruct the whole cell track. 
+* [Output](./Output.md): measure/display cell or track features, export results to other plugins/softwares :outbox_tray: 
 * [Display](./Display.md): display additional informations (segmentation skeleton, general informations...) or a spatial grid :window:  
 * [Preferences](./Preferences.md): to set-up user-specific preferences as keyboard shortcuts :capital_abcd: 
 
@@ -76,7 +76,7 @@ Shortcut: **press <kbd>v</kbd> to show/hide the movie** (visible).
 Shortcut: _press <kbd>b</kbd> to show/hide the segmentation_ (binary).
 * **Press <kbd>5</kbd> to switch to zoom/moving mode**.
 * **Press <kbd>c</kbd> to see only the movie layer**.
-* **Press <kbd>g</kbd> to show/hide a grid to have a spatial repere**. See [Display](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Display) documentation for more details.
+* **Press <kbd>g</kbd> to show/hide a grid to have a spatial repere**. See [Display](./Display.md) documentation for more details.
 
 
 ## Additional options

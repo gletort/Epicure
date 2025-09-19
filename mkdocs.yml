@@ -8,6 +8,9 @@ nav:
     - Usage:
         - Start EpiCure: Start-epicure.md
         - Edit: Edit.md
+        - Inspect: Inspect.md
+        - Track: Track.md
+        - Outputt: Output.md
         - Display: Display.md
         - Preferences: Preferences.md
     - Additionnal options:
