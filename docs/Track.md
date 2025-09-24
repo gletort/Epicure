@@ -20,6 +20,12 @@ It's also possible to track the cells in an other software/plugins.
 To use tracking from an external software, the cells need to be labelled by their track number to be loaded in EpiCure. 
 Cell divisions/merges will not be loaded from external tracks.
 
+### Division detection
+Cell divisions can be detected by going in the [Inspect](./Inspect.md) interface, and select `get_divisions` in the `Track options` panel.
+This option looks for two tracks that appear at the same frame, are touching and have a potential parent track (a track ending in the previous frame without being in a division or extrusion event). 
+
+Thus, if you load results from an external tracking software, as TrackMate, a division event should be detected without having to load the division information from that software (the format of the division implementation can vary between software so it can be convenient to not rely on it).
+
 ### Load TrackMate tracks
 In particular, you can perform the cell segmentation and tracking in [TrackMate](https://imagej.net/plugins/trackmate/) and use the Action `Export label image`.
 Then load this labelled image as the segmentation file in EpiCure and you will directly get the tracks.
@@ -70,6 +76,7 @@ General shortcuts are documented [here](index.md/#general-options).
 		|   |     |	
 		| ------------ | ------------------------------------ |
 		| <kbd>r</kbd> | Show/Hide the Track layer |
+		| <kbd>l</kbd> | Color tracks by lineage (color of the first mother cell) |
 
 
 ---

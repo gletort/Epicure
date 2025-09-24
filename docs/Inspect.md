@@ -137,6 +137,7 @@ General shortcuts are documented [here](index.md/#general-options).
 		|   |     |	
 		| ------------ | ------------------------------------ |
 		| <kbd>Ctrl+Shiftt</kbd>+:material-mouse-left-click-outline: | Add a division. Drag the click from one daughter cell to the other. EpiCure will determine the most likely mother cell.|
+		| <kbd>Ctrl+Shiftt</kbd>+:material-mouse-right-click-outline: | Add an extrusion. Click on the last cell of the track to select the moment of extrusion.|
 
 
 ---
