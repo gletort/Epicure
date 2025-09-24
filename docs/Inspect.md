@@ -69,6 +69,8 @@ _Note that you can also know when analysing data which cells are on image border
 
 `Flag track apparition` detects the sudden apparition of a new track in the movie (not on the first frame, and not on the borders of the image). If the cell is marked as a child of a division at that frame, it will not be flagged. (If two neighbor tracks are flagged in the same frame, it is likely to be an undetected division event)  
 
+`Get divisions` detects potential division: two neighboring tracks that appear simultaneously in the movie, and with a parent cell that suddenly disappear in the previous frame, without any descendant. This option adds the detected divisions to the ones already present.
+
 `Flag track disparition` detects the sudden disappearance of a track in the movie (not on the last frame). If the cell is marked as a parent of a division, it will not be flagged. If the cell area is below the selected threshold in the `cell area threshold` parameter, it will considered to be an extrusion and not be flagged.
 
 `Get extrusions` will add an `extrusion` event for all track that finish without being followed by a division and with the last cell area below the `cell area threshold` parameter. Tracks that are only 1 frame long (cell is only present in one frame) are not flagged for an extrusion.
