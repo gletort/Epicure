@@ -21,7 +21,6 @@ EpiCure detect segmentation errors by taking advantage of temporal information.
 When a correction is done at a given frame, EpiCure relink the track to adjust for the changes.
 
 
- > **Documentation in the [wiki](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Home)**
  > **See the full [documentation here](https://gletort.github.io/Epicure/)**
 
 ![EpiCure interface](https://github.com/gletort/Epicure/blob/main/docs/imgs/EpiGen.png "EpiCure interface")
@@ -49,7 +48,7 @@ Tracking options are proposed in EpiCure:
 * Laptrack overlaps
 
 ## Usage
-Refer to the [wiki](https://gitlab.pasteur.fr/gletort/epicure/-/wikis/Home) for documentation of the different steps possible in the pipeline.
+Refer to the [documentation](https://gletort.github.io/Epicure/) for documentation of the different steps possible in the pipeline.
 
 ## References
 
@@ -59,14 +58,12 @@ EpiCure is not published yet, you can cite it using Zenodo for now: https://doi.
 
 
 ## Issues
-Issues have been disactivated to avoid spammed issues. To report an issue or ask for development, please contact us directly by email.
-
+If you encounter a code related issue using EpiCure, please [file an issue](https://github.com/gletort/epicure/issues) in this repository.
+If you have a question on using EpiCure or ask to add a feature, either file an issue or write in the [imagesc forum](https://forum.image.sc/).
 
 This [napari] plugin was initialized with [Cookiecutter] using [@napari]'s [cookiecutter-napari-plugin] template.
 
 [napari]: https://github.com/napari/napari
-[Cookiecutter]: https://github.com/audreyr/cookiecutter
 [file an issue]: https://github.com/gletort/epicure/issues
-[tox]: https://tox.readthedocs.io/en/latest/
 [pip]: https://pypi.org/project/pip/
 [PyPI]: https://pypi.org/
