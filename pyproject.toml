@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools==68.2.2", "setuptools_scm>=7.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epicure"
+version = "1.0"
+description = "Napari plugin to manually correct epithelia segmentation in movies"
+license.file = "LICENSE"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Gaëlle Letort"},
+]
+classifiers = [
+    "Framework :: napari",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "napari <= 0.6.4",
+    "numpy",
+    "qtpy",
+    "tifffile",
+    "scikit-image",
+    "opencv_python_headless",
+    "roifile",
+    "pyqtwebengine",
+    "magicgui",
+    "scipy",
+    "xlsxwriter",
+    "plotly",
+    "kaleido",
+    "imagecodecs",
+    "edt",
+    "packaging",
+    "laptrack",
+    "joblib",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/gletort/Epicure/issues"
+"Documentation" = "https://gletort.github.io/Epicure/"
+"Source Code" = "https://github.com/gletort/Epicure"
+"User Support" = "https://github.com/gletort/Epicure/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+# Explicitly list packages to include
+packages = [
+    "epicure",
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]
+
+[project.entry-points."napari.manifest"]
+epicure = "epicure:napari.yaml"
