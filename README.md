@@ -61,8 +61,6 @@ EpiCure is not published yet, you can cite it using Zenodo for now: https://doi.
 If you encounter a code related issue using EpiCure, please [file an issue](https://github.com/gletort/epicure/issues) in this repository.
 If you have a question on using EpiCure or ask to add a feature, either file an issue or write in the [imagesc forum](https://forum.image.sc/).
 
-This [napari] plugin was initialized with [Cookiecutter] using [@napari]'s [cookiecutter-napari-plugin] template.
-
 [napari]: https://github.com/napari/napari
 [file an issue]: https://github.com/gletort/epicure/issues
 [pip]: https://pypi.org/project/pip/
