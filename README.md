@@ -10,16 +10,14 @@
 
 **Napari plugin to ease manual correction of epithelia segmentation in movies.**
 
-**The plugin is being transferred from gitlab. For now, refers to the main [gitlab version](https://gitlab.pasteur.fr/gletort/epicure/)**
-
 To analyse individual cell trajectory from epithelia movies marked for cell-cell junctions, a very precise segmentation and tracking is required.
-Several tools such as TissuAnalyzer, Epyseg, CellPose or Dist2Net perform very good segmentation (~5% of errors). 
+Several tools such as TissuAnalyzer, [Epyseg](https://github.com/baigouy/EPySeg), [CellPose](https://www.cellpose.org/) or [Dist2Net](https://github.com/jeanollion/distnet2d) perform very good segmentation (~5% of errors). 
 However, this still implies a high amount of cells to correct manually. 
+
 EpiCure allows to decrease the burden of this task. 
 Several features are proposed to ease the manual correction of the segmented movies, such as error detection, numerous shortcuts for editing the segmentation, option for tracking, display and measure/export options.
 EpiCure detect segmentation errors by taking advantage of temporal information. 
 When a correction is done at a given frame, EpiCure relink the track to adjust for the changes.
-
 
  > **See the full [documentation here](https://gletort.github.io/Epicure/)**
 
