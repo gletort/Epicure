@@ -59,7 +59,7 @@ packages = [
 ]
 
 [tool.setuptools_scm]
-write_to = "src/epicure/_version.py
+write_to = "src/epicure/_version.py"
 
 [tool.setuptools.package-data]
 "*" = ["*.yaml"]

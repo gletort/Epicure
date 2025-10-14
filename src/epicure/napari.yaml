@@ -1,0 +1,27 @@
+name: epicure
+display_name: EpiCure
+categories: ["Annotation", "Segmentation"]
+contributions:
+  commands:
+    - id: epicure.start
+      python_name: epicure.start_epicuring:start_epicure
+      title: Start
+    - id: epicure.concatenate
+      python_name: epicure.concatenate_movie:concatenate_movies
+      title: Concatenate
+    - id: epicure.doc
+      title: Documentation
+      python_name: epicure.Utils:show_documentation
+    - id: epicure.preferences
+      title: Preferences
+      python_name: epicure.preferences:edit_preferences
+  widgets:
+    - command: epicure.start
+      display_name: Start EpiCure
+    - command: epicure.concatenate
+      display_name: Concatenate EpiCured movies
+    - command: epicure.doc
+      display_name: Open EpiCure documentation
+      autogenerate: false
+    - command: epicure.preferences
+      display_name: Edit Preferences
