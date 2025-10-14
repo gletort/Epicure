@@ -1,0 +1,1125 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://gletort.github.io/Epicure/Inspect/">
+      
+      
+        <link rel="prev" href="../Edit/">
+      
+      
+        <link rel="next" href="../Track/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Inspect - EpiCure Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.0.1%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%20480c-35.3%200-64-28.7-64-64V96c0-35.3%2028.7-64%2064-64h320c35.3%200%2064%2028.7%2064%2064v213.5c0%2017-6.7%2033.3-18.7%2045.3L322.7%20461.3c-12%2012-28.3%2018.7-45.3%2018.7zm325.5-176H296c-13.3%200-24%2010.7-24%2024v93.5z%22/%3E%3C/svg%3E');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.0.1%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M32%2064C14.3%2064%200%2078.3%200%2096s14.3%2032%2032%2032h86.7c12.3%2028.3%2040.5%2048%2073.3%2048s61-19.7%2073.3-48H480c17.7%200%2032-14.3%2032-32s-14.3-32-32-32H265.3C253%2035.7%20224.8%2016%20192%2016s-61%2019.7-73.3%2048zm0%20160c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h246.7c12.3%2028.3%2040.5%2048%2073.3%2048s61-19.7%2073.3-48H480c17.7%200%2032-14.3%2032-32s-14.3-32-32-32h-54.7c-12.3-28.3-40.5-48-73.3-48s-61%2019.7-73.3%2048zm0%20160c-17.7%200-32%2014.3-32%2032s14.3%2032%2032%2032h54.7c12.3%2028.3%2040.5%2048%2073.3%2048s61-19.7%2073.3-48H480c17.7%200%2032-14.3%2032-32s-14.3-32-32-32H233.3c-12.3-28.3-40.5-48-73.3-48s-61%2019.7-73.3%2048z%22/%3E%3C/svg%3E');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.0.1%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M224%200c35.3%200%2064%2021.5%2064%2048%200%2010.4-4.4%2020-12%2027.9-6.6%206.9-12%2015.3-12%2024.9%200%2015%2012.2%2027.2%2027.2%2027.2H336c26.5%200%2048%2021.5%2048%2048v44.8c0%2015%2012.2%2027.2%2027.2%2027.2%209.5%200%2018-5.4%2024.9-12%207.9-7.5%2017.5-12%2027.9-12%2026.5%200%2048%2028.7%2048%2064s-21.5%2064-48%2064c-10.4%200-20.1-4.4-27.9-12-6.9-6.6-15.3-12-24.9-12-15%200-27.2%2012.2-27.2%2027.2V464c0%2026.5-21.5%2048-48%2048h-56.8c-12.8%200-23.2-10.4-23.2-23.2%200-9.2%205.8-17.3%2013.2-22.8%2011.6-8.7%2018.8-20.7%2018.8-34%200-26.5-28.7-48-64-48s-64%2021.5-64%2048c0%2013.3%207.2%2025.3%2018.8%2034%207.4%205.5%2013.2%2013.5%2013.2%2022.8%200%2012.8-10.4%2023.2-23.2%2023.2H48c-26.5%200-48-21.5-48-48V343.2C0%20330.4%2010.4%20320%2023.2%20320c9.2%200%2017.3%205.8%2022.8%2013.2%208.7%2011.6%2020.7%2018.8%2034%2018.8%2026.5%200%2048-28.7%2048-64s-21.5-64-48-64c-13.3%200-25.3%207.2-34%2018.8-5.5%207.4-13.5%2013.2-22.8%2013.2C10.4%20256%200%20245.6%200%20232.8V176c0-26.5%2021.5-48%2048-48h108.8c15%200%2027.2-12.2%2027.2-27.2%200-9.5-5.4-18-12-24.9-7.5-7.9-12-17.5-12-27.9%200-26.5%2028.7-48%2064-48%22/%3E%3C/svg%3E');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.0.1%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M192%2096c0-53%2043-96%2096-96s96%2043%2096%2096v3.6c0%2015.7-12.7%2028.4-28.4%2028.4H220.5c-15.7%200-28.4-12.7-28.4-28.4V96zm345.6%2012.8c10.6%2014.1%207.7%2034.2-6.4%2044.8l-97.8%2073.3c5.3%208.9%209.3%2018.7%2011.8%2029.1H544c17.7%200%2032%2014.3%2032%2032s-14.3%2032-32%2032h-96v32c0%202.6-.1%205.3-.2%207.9l83.4%2062.5c14.1%2010.6%2017%2030.7%206.4%2044.8s-30.7%2017-44.8%206.4l-63.1-47.3c-23.2%2044.2-66.5%2076.2-117.7%2083.9V280c0-13.3-10.7-24-24-24s-24%2010.7-24%2024v230.2c-51.2-7.7-94.5-39.7-117.7-83.9l-63.1%2047.3c-14.1%2010.6-34.2%207.7-44.8-6.4s-7.7-34.2%206.4-44.8l83.4-62.5c-.1-2.6-.2-5.2-.2-7.9v-32H32c-17.7%200-32-14.3-32-32s14.3-32%2032-32h98.8c2.5-10.4%206.5-20.2%2011.8-29.1l-97.8-73.3c-14.1-10.6-17-30.7-6.4-44.8s30.7-17%2044.8-6.4L192%20184c12.3-5.1%2025.8-8%2040-8h112c14.2%200%2027.7%202.8%2040%208l108.8-81.6c14.1-10.6%2034.2-7.7%2044.8%206.4%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20576%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.0.1%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%2064C28.7%2064%200%2092.7%200%20128v256c0%2035.3%2028.7%2064%2064%2064h448c35.3%200%2064-28.7%2064-64V128c0-35.3-28.7-64-64-64zm16%2064h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016H80c-8.8%200-16-7.2-16-16v-32c0-8.8%207.2-16%2016-16M64%20240c0-8.8%207.2-16%2016-16h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016H80c-8.8%200-16-7.2-16-16zm112-112h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16v-32c0-8.8%207.2-16%2016-16m-16%20112c0-8.8%207.2-16%2016-16h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16zm16%2080h224c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016H176c-8.8%200-16-7.2-16-16v-32c0-8.8%207.2-16%2016-16m80-176c0-8.8%207.2-16%2016-16h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16zm16%2080h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16v-32c0-8.8%207.2-16%2016-16m80-80c0-8.8%207.2-16%2016-16h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16zm16%2080h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16v-32c0-8.8%207.2-16%2016-16m80-80c0-8.8%207.2-16%2016-16h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16zm16%2080h32c8.8%200%2016%207.2%2016%2016v32c0%208.8-7.2%2016-16%2016h-32c-8.8%200-16-7.2-16-16v-32c0-8.8%207.2-16%2016-16%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%207.0.1%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202025%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%200c14.7%200%2028.2%208.1%2035.2%2021l216%20400c6.7%2012.4%206.4%2027.4-.8%2039.5S486.1%20480%20472%20480H40c-14.1%200-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9%2020.5-21%2035.2-21m0%20352a32%2032%200%201%200%200%2064%2032%2032%200%201%200%200-64m0-192c-18.2%200-32.7%2015.5-31.4%2033.7l7.4%20104c.9%2012.5%2011.4%2022.3%2023.9%2022.3%2012.6%200%2023-9.7%2023.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z%22/%3E%3C/svg%3E');}</style>
+
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2020c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m1%205h-2v4H7v2h4v4h2v-4h4v-2h-4z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#division-events" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="EpiCure Documentation" class="md-header__button md-logo" aria-label="EpiCure Documentation" data-md-component="logo">
+      
+  <img src="../imgs/epicure_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EpiCure Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inspect
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="white" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="dark-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gletort/Epicure/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="EpiCure Documentation" class="md-nav__button md-logo" aria-label="EpiCure Documentation" data-md-component="logo">
+      
+  <img src="../imgs/epicure_logo.png" alt="logo">
+
+    </a>
+    EpiCure Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gletort/Epicure/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Usage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Start-epicure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Start EpiCure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Edit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Edit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Inspect
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inspect
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#division-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Division events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extrusion-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extrusion events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#track-based-suspects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Track-based suspects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Track-based suspects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ignoring-border-cells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ignoring border cells
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#possible-errors-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Possible errors detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inspect-tracks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inspect tracks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Events layer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#display-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Display options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortcuts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frame-based-suspects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frame based suspects
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frame based suspects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Options
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shortcuts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shortcuts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cell-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cell area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intensity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intensity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tubeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tubeness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solidity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solidity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Track/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Track
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Outputt
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Display/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Display
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preferences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Additionnal options
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Additionnal options
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Concatenate-epicured-movies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concatenate movies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Segment-option/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Segment option
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Inspect</h1>
+
+<div class="admonition abstract">
+<p class="admonition-title">Inspect segmentation/tracks to reveal potential errors - Handle events</p>
+<p><em>Options to detect potential errors and navigate through them. Display also events as cell division and extrusions</em></p>
+</div>
+<p>In EpiCure, an event is a point (a cell at a given time point) that has been detected as potentially wrongly segmented/tracked and might need manual correction (suspect) or that corresponds to a cellular event (division, extrusion..).</p>
+<p>Several features allows to detect possible segmentation/tracking errors and to display and navigate through these potential errors.</p>
+<ul>
+<li><a href="#division-events">Division events</a></li>
+<li><a href="#extrusion-events">Extrusion events</a></li>
+<li><a href="#frame-based-suspects">Find suspects on a single frame</a></li>
+<li><a href="#track-based-suspects">Find suspects by track inspection</a></li>
+<li><a href="#visualisation">Visualisation/display</a></li>
+</ul>
+<p>All the current eventts are kept and saved when the segmentation is saved (by pressing <kbd>s</kbd>). They will be reloaded when an EpiCured file is loaded. The current number of events is indicated on top of the <code>Events</code> panel.</p>
+<p><img alt="event_interface" src="../imgs/events_interface.png" /></p>
+<p>To remove all events, click on <code>Reset/Update some events...</code>. A new window will pop-up to let you choose which events to reset or update.</p>
+<p><img alt="reset_events" src="../imgs/events_reset.png" /></p>
+<p>Click on <code>Reset all events</code> to delete all events. You can also choose to delete only one type of event by clicking on the corresponding buttons below.</p>
+<p>To remove events (division or extrusion) that correspond to cells that are on the border of the movie or on the boundary of the tissue, choose the options <code>remove if on border</code> or <code>remove if on boundary</code> and click on the corresponding type of event to remove.</p>
+<hr />
+<h2 id="division-events">Division events</h2>
+<p>Division events are detected based on the tracking graph. If cells has not been tracked yet, no division will be found. Division are indicated by a blue circle, placed on the first frame where the two daughter cells are visible and it contains the information of the mother cell label.</p>
+<p><img alt="division_event" src="../imgs/events_division.png" /></p>
+<p>(Un)Select the option <code>show division</code> to (un)display division events. You can see the total number of divisions found written in the top of the <code>Inspect</code> panel.</p>
+<p>You can manually add a division event, or remove one.
+* To remove a division, the shortcut is the same as for removing any event: by default, press <kbd>Control+Alt+Right-click</kbd> on the event to remove.
+* To add a divison, do <kbd>Control+Shift+Left clikc</kbd> from one daughter cell to the other. EpiCure will detect automatically the most likely mother cell.
+If suspect events had been found on the two daughter cells or on the mother cell, they will be automatically removed when manually adding the division.</p>
+<h2 id="extrusion-events">Extrusion events</h2>
+<p>Extrusions are indicated by a red cross, placed on the last frame where the cell is still visible.</p>
+<p>Extrusion events are detected with the <code>Inspect</code> panel, in the inspect track option.
+It detects track that suddenly disappear (no daughter cell, not on the last frame, and not on the tissue boundary if the option <code>ignore boundary cells</code> is checked).
+As a sudden disparition of a track can also be due to a segmentation/tracking error, we added a constraint on the size of the cell to consider the disappearance as an extrusion.
+The cell in the last frame before disappearance should indeed be small if it is an extrusion.
+The threshold of cell area to consider it as an extrusion is chosen with the <code>cell area threshold</code> parameter.</p>
+<hr />
+<h2 id="track-based-suspects">Track-based suspects</h2>
+<p><strong>Flag suspicious segmentation based on track examination.</strong></p>
+<p><img alt="inspect" src="../imgs/inspect_gui.png" /></p>
+<h3 id="ignoring-border-cells">Ignoring border cells</h3>
+<p>Cells on the border of the tissu or imaged field are often flagged as potential errors as they can leave/enter the imaged region and thus have irregular tracks. To not flag these cells, check the <code>Ignore cells on</code> <code>border (of image)</code> and/or <code>tissue boundary</code> options.
+This will not flag any cells that touch the border of the image (for the <code>border</code> option) or that are in the periphery of the tissu (for the <code>boundary</code> option). 
+<em>Note that you can also know when analysing data which cells are on image border or tissue boundary in the <code>Output&gt;measure cells</code> option if you select the <code>Boundary</code> and <code>Border</code> features.</em></p>
+<h3 id="possible-errors-detection">Possible errors detection</h3>
+<p><code>Flag track apparition</code> detects the sudden apparition of a new track in the movie (not on the first frame, and not on the borders of the image). If the cell is marked as a child of a division at that frame, it will not be flagged. (If two neighbor tracks are flagged in the same frame, it is likely to be an undetected division event)  </p>
+<p><code>Get divisions</code> detects potential division: two neighboring tracks that appear simultaneously in the movie, and with a parent cell that suddenly disappear in the previous frame, without any descendant. This option adds the detected divisions to the ones already present.</p>
+<p><code>Flag track disparition</code> detects the sudden disappearance of a track in the movie (not on the last frame). If the cell is marked as a parent of a division, it will not be flagged. If the cell area is below the selected threshold in the <code>cell area threshold</code> parameter, it will considered to be an extrusion and not be flagged.</p>
+<p><code>Get extrusions</code> will add an <code>extrusion</code> event for all track that finish without being followed by a division and with the last cell area below the <code>cell area threshold</code> parameter. Tracks that are only 1 frame long (cell is only present in one frame) are not flagged for an extrusion.</p>
+<p><code>Flag track gaps</code> find track that have gaps (no label in one or more frames within the track). If the option <code>Allow gaps</code> in the <code>advanced parameters</code> in the starting interface was not selected, there should not be any gaps.</p>
+<p><code>Flag track smaller to</code> flags as possibly wrong all tracks that are smaller in duration (number of frames) than the chosen parameter. For example, a cell that is present only in one frame on the whole movie is likely an error (except on the movie limits).</p>
+<p><code>Flag jump in track position</code>: a convenient way to notice errors in tracking or segmentation is to display the tracks (by default <kbd>r</kbd> shortcut). Errors are noticeable as sudden jump in the track (long line between two frames). This option is automatically searching for such jump in position within a track.
+The displacement between two consecutive frames of the tracking (can include a gap) is compared to the local average displacement within the track. If the difference in displacement is <code>jump in track position parameter</code> threshold above the other displacements, it will be flagged.
+Increase the value of the threshold to detect less potential jump in the track.</p>
+<p>A brutal and temporary (one or two frames only) change of value of a morphological/intensity feature of a cell within the track can reflect a segmentation error.
+The options <code>* variation</code> allow to flag such events. The associated parameter correspond to the amount of variation of the feature to flag it as suspect. Increasing it will decrease the sensitivity of the track inspection. The features that can be examined along the track are currently: size (area), shape (aspect ratio).</p>
+<h3 id="inspect-tracks">Inspect tracks</h3>
+<p>Click on <code>Inspect track</code> to launch the analyse with the selected parameters. It will delete all previously present suspects based on track before to run. Frame-based suspects are not affected.</p>
+<p>When the process is finished, the number of <code>suspects</code> will be updated in the top of the panel and you can see each event as a point (a cross for suspect, circle for division and triangle for extrusions) in the corresponding position in the movie. </p>
+<h2 id="visualisation">Visualisation</h2>
+<p><img alt="📍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cd.svg" title=":round_pushpin:" /> <strong>Press <kbd>x</kbd> to show/hide the suspect points.</strong></p>
+<h3 id="events-layer">Events layer</h3>
+<p>This layer contains points (shown as cross) placed at the center of each cell suspected of being not correctly segmented. Several features can be used to detect suspects, either from a static features <a href="" title="frame-based-suspects"><code>see frame-based suspects</code></a> or from analyzing the tracks <a href="#track-based-suspects"><code>Track options</code></a>. Cellular events are also displayed in this layer. Divisions are marked with blue circle by default.</p>
+<p>The score of a suspicious event is the number of suspicion (features) associated to that cell.</p>
+<h3 id="display-options">Display options</h3>
+<p>Use the interface <code>Display options</code> in the <code>Inspect</code> onglet (right panel) to change the display of the points (the size or the color). 
+You can choose the reference feature for coloring the events. If a cell was suspected by the selected feature, the point will appear red, otherwise if the suspicion came from another feature, the point will appear white. The <code>score</code> feature shows the number of suspicions (features) associated to the cell from white (1) to bright red (maximum).</p>
+<p><code>Go to event</code> will zoom on the selected event (numbered in <code>Event n°</code> parameter) and print in the Terminal window why this point was flag as a possible segmentation mistake or which cellular event it is. <img alt="📍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cd.svg" title=":round_pushpin:" /> <strong><kbd>Ctrl+Alt+Left click</kbd> on a point to zoom on it and displays suspicion information</strong></p>
+<p>To directly navigate between suspects, <img alt="📍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cd.svg" title=":round_pushpin:" /> <strong>Press <kbd>Space</kbd> to move from one suspect to another</strong>. The view will directly to go to the next suspect, zoom on it, and displays the information in the terminal. It will navigate between events that are currently displayed, other events will be skipped.</p>
+<p>If the segmentation/tracking is in fact correct, you can remove the point by clicking on <code>Exonerate current event</code>. <img alt="📍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4cd.svg" title=":round_pushpin:" /> <strong><kbd>Ctrl+Alt+Right click</kbd> to remove the clicked point from event list</strong></p>
+<h2 id="shortcuts">Shortcuts</h2>
+<p>EpiCure proposes also shortcuts to handle events (edit, navigate, display) without having to select this layer, keeping the <code>Segmentation</code> layer selected.
+General shortcuts are documented <a href="../#general-options">here</a>.</p>
+<details class="tip" open="open">
+<summary>Shortcut/options</summary>
+<p><em><strong>EpiCure shortcuts are only active when <code>Segmentation</code> layer is selected</strong></em></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Event navigation <img alt="🔍" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f50d.svg" title=":mag:" /></label><label for="__tabbed_1_2">Event edition <img alt="🔧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f527.svg" title=":wrench:" /></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Ctrl+Alt</kbd>+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM6 15v-2h12v2c0 1.59-.63 3.12-1.76 4.24A5.97 5.97 0 0 1 12 21a5.97 5.97 0 0 1-4.24-1.76A5.97 5.97 0 0 1 6 15m-2 0c0 2.12.84 4.16 2.34 5.66S9.88 23 12 23s4.16-.84 5.66-2.34S20 17.12 20 15v-4H4zm7-6V1.07C7.06 1.56 4 4.92 4 9z"/></svg></span></td>
+<td>Zoom on the clicked event and display its information. The information (type of event, label) is written in the Terminal window.</td>
+</tr>
+<tr>
+<td><kbd>Ctrl+Alt</kbd>+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07c3.94.49 7 3.85 7 7.93zm-2 0V1.07A8.007 8.007 0 0 0 4.25 7C4.09 7.64 4 8.31 4 9zM6.34 7C6.82 5.65 7.78 4.5 9 3.81V7zM6 15v-2h12v2c0 1.59-.63 3.12-1.76 4.24A5.97 5.97 0 0 1 12 21a5.97 5.97 0 0 1-4.24-1.76A5.97 5.97 0 0 1 6 15m-2 0c0 2.12.84 4.16 2.34 5.66S9.88 23 12 23s4.16-.84 5.66-2.34S20 17.12 20 15v-4H4z"/></svg></span></td>
+<td>Remove the event under the click.</td>
+</tr>
+<tr>
+<td><kbd>Space</kbd></td>
+<td>Move and zoom on the next event. This option navigates between events that are currently displayed (checked).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Ctrl+Shiftt</kbd>+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07A8.007 8.007 0 0 1 19.75 7c.16.64.25 1.31.25 2zm4.66-2c-.48-1.35-1.43-2.5-2.66-3.19V7zM6 15v-2h12v2c0 1.59-.63 3.12-1.76 4.24A5.97 5.97 0 0 1 12 21a5.97 5.97 0 0 1-4.24-1.76A5.97 5.97 0 0 1 6 15m-2 0c0 2.12.84 4.16 2.34 5.66S9.88 23 12 23s4.16-.84 5.66-2.34S20 17.12 20 15v-4H4zm7-6V1.07C7.06 1.56 4 4.92 4 9z"/></svg></span></td>
+<td>Add a division. Drag the click from one daughter cell to the other. EpiCure will determine the most likely mother cell.</td>
+</tr>
+<tr>
+<td><kbd>Ctrl+Shiftt</kbd>+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9V1.07c3.94.49 7 3.85 7 7.93zm-2 0V1.07A8.007 8.007 0 0 0 4.25 7C4.09 7.64 4 8.31 4 9zM6.34 7C6.82 5.65 7.78 4.5 9 3.81V7zM6 15v-2h12v2c0 1.59-.63 3.12-1.76 4.24A5.97 5.97 0 0 1 12 21a5.97 5.97 0 0 1-4.24-1.76A5.97 5.97 0 0 1 6 15m-2 0c0 2.12.84 4.16 2.34 5.66S9.88 23 12 23s4.16-.84 5.66-2.34S20 17.12 20 15v-4H4z"/></svg></span></td>
+<td>Add an extrusion. Click on the last cell of the track to select the moment of extrusion.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</details>
+<hr />
+<h2 id="frame-based-suspects">Frame based suspects</h2>
+<p>Cells can be suspected of being un-correctly segmented based on several static features, if their values fall out of range.
+When a cell is suspected, a point will be added in the <a href="#visualization">Suspects</a> layer at the center of the cell in the frame where the suspicion has been raised.</p>
+<p>From a static frame, several features can be measured and evaluated for out of range values:</p>
+<ul>
+<li><a href="#cell-area">Cell area</a></li>
+<li><a href="#tubeness">Tubeness</a></li>
+<li><a href="#solidity">Solidity</a></li>
+<li><a href="#intensity">Intensity</a></li>
+</ul>
+<p>Click on the desired feature button to launch the feature inspection.</p>
+<h3 id="options">Options</h3>
+<p><code>only current frame</code>: if it is checked, only the current frame will be inspected for the given feature. Else, the inspection will be done on each frame.</p>
+<h3 id="shortcuts_1">Shortcuts</h3>
+<p>The active layer must be the <code>Segmentation</code> layer for the shortcuts to work.</p>
+<h3 id="cell-area">Cell area</h3>
+<p>This feature measure the cell area in all frames (or only current frame if the option is checked) and test if it is above/below chosen threshold.
+Each cell (at each time point) below/above the two parameters around the <code>&lt; area (pix^2) &lt;</code> buttons will be flagged as suspect for area.</p>
+<p>The parameters are in pixel^2 unit. Use <code>0</code> for the min area parameter to keep all small cells, and a very high value for the max area parameter to keep all large cells.</p>
+<h3 id="intensity">Intensity</h3>
+<p>This feature consider the ratio of intensity of the inner cell region compared to the cell periphery. Indeed, the peripheric part of the cell containing the junction should be much brighter while inside the cell should not be dark. If the ratio is above the chosen threshold, the cell will be marked as suspicious.</p>
+<h3 id="tubeness">Tubeness</h3>
+<p>This feature consider the ratio of linearity of the inner cell compared to the cell periphery. Indeed, the peripheric part of the cell containing the junction should be linear while inside the cell it should not be linear at all. The "linearity" is quantified by the tubeness of the intensity image. When the ratio is above the chosen threshold, the cell will be marked as suspicious.</p>
+<h3 id="solidity">Solidity</h3>
+<p>Looks at the cell shape.
+Cell as detected as outliers if their solidity is greater or smaller than the vast majority of the cells <strong>in the current frame</strong> following Tukey's outlier scheme:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>solidity &lt; Q1 - k*(Q3-Q1)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>solidity &gt; Q3 + k*(Q3-Q1)
+</span></code></pre></div>
+<p><code>Q1</code> and <code>Q3</code> are the 1st and 3rd quartiles. <code>k</code> controls the range to consider a cell as outlier and can be chosen in the interface.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Edit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Edit">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Edit
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Track/" class="md-footer__link md-footer__link--next" aria-label="Next: Track">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Track
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "navigation.path", "navigation.top", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
