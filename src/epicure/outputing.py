@@ -7,9 +7,11 @@ import napari
 from napari.utils import progress
 import epicure.Utils as ut
 import epicure.epiwidgets as wid
+from epicure.trackmate_export import save_trackmate_xml
 import plotly.express as px
 from qtpy import QtCore
 from qtpy.QtCore import Qt
+
 QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_ShareOpenGLContexts, True)  ## for QtWebEngine import to work on some computers
 from qtpy.QtWebEngineWidgets import QWebEngineView 
 from qtpy.QtWidgets import QHBoxLayout, QVBoxLayout, QWidget, QTableWidget, QTableWidgetItem, QGridLayout, QListWidget
@@ -29,7 +31,7 @@ class Outputing(QWidget):
         self.seglayer = self.viewer.layers["Segmentation"]
         self.movlayer = self.viewer.layers["Movie"]
         self.selection_choices = ["All cells", "Only selected cell"]
-        self.output_options = ["", "Export to extern plugins", "Export segmentations", "Measure cell features", "Measure track features", "Export/Measure events", "Save screenshot movie"]
+        self.output_options = ["", "Export to extern plugins", "Export segmentations", "Measure cell features", "Measure track features", "Export/Measure events", "Save as TrackMate XML", "Save screenshot movie"]
         self.tplots = None
         
         chanlist = ["Movie"]
@@ -150,7 +152,16 @@ class Outputing(QWidget):
         self.handle_event_group.setLayout( elayout )
         self.handle_event_group.hide()
         all_layout.addWidget( self.handle_event_group )
+
+        ## Save TrackMate XML option
+        self.save_tm_group, save_tm_layout = wid.group_layout( "Save as TrackMate XML" )
+        self.save_tm_btn = wid.add_button( "Save as TrackMate XML", self.save_tm_xml, "Save the current segmentation and the optional tracking in a TrackMate XML file" )
+        save_tm_layout.addWidget( self.save_tm_btn )
         
+        self.save_tm_group.setLayout( save_tm_layout )
+        self.save_tm_group.hide()
+        all_layout.addWidget( self.save_tm_group )
+       
         ## Save screenshots option
         current_frame = ut.current_frame( self.epicure.viewer )
         self.screenshot_group, screenshot_layout = wid.group_layout( "Save screenshot movie" )
@@ -231,6 +242,7 @@ class Outputing(QWidget):
         self.feature_group.setVisible( cur_option == "Measure cell features" )
         self.trackfeat_group.setVisible( cur_option == "Measure track features" )
         self.handle_event_group.setVisible( cur_option == "Export/Measure events" )
+        self.save_tm_group.setVisible( cur_option == "Save as TrackMate XML" )
         self.screenshot_group.setVisible( cur_option == "Save screenshot movie" )
 
     def get_current_labels( self ):
@@ -1075,6 +1087,13 @@ class Outputing(QWidget):
         if cat%ncolors == 2:  ## color type 2
             croi.stroke_color = b'\xff\xff\x00\x00'
         return croi
+
+    def save_tm_xml( self ):
+        """ Save current segmentation and tracking in TrackMate XML format """
+        outname = os.path.join( self.epicure.outdir, self.epicure.imgname+".xml" )
+        save_trackmate_xml( self.epicure, outname )
+        if self.epicure.verbose > 0:
+            ut.show_info("TrackMate XML saved in "+outname)
 
 
 class CellFeatures(QWidget):
