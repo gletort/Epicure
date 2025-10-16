@@ -2,6 +2,8 @@ from datetime import datetime
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 
+import pandas as pd
+
 SPOT_FEATS = [
     {"feature": "POSITION_X", "name": "X", "shortname": "X", "dimension": "POSITION", "isint": "false"},
     {"feature": "POSITION_Y", "name": "Y", "shortname": "Y", "dimension": "POSITION", "isint": "false"},
@@ -37,6 +39,58 @@ def build_feat_declaration_tag():
     return feat_declarations
 
 
+def build_spots_df(epic):
+    """Build a DataFrame representing the spots table for TrackMate XML."""
+    df_spots = pd.DataFrame(epic.tracking.track_data, columns=["label", "FRAME", "pos_x", "pos_y"])
+    df_spots["ID"] = df_spots.index
+    df_spots["name"] = df_spots.apply(lambda row: f"LABEL{row['label']}_FRAME{row['FRAME']}", axis=1)
+    df_spots["POSITION_X"] = df_spots["pos_x"] * epic.epi_metadata.get("ScaleXY", 1)
+    df_spots["POSITION_Y"] = df_spots["pos_y"] * epic.epi_metadata.get("ScaleXY", 1)
+    df_spots["POSITION_T"] = df_spots["FRAME"] * epic.epi_metadata.get("ScaleT", 1)
+    df_spots["VISIBILITY"] = 1
+    df_spots.drop(columns=["pos_x", "pos_y"], inplace=True)
+    # TODO: ROI_N_POINTS is missing
+
+    return df_spots
+
+
+def build_all_spots_tag(df_spots):
+    """Build the AllSpots tag for TrackMate XML."""
+    all_spots = ET.Element("AllSpots", {"nspots": str(len(df_spots))})
+
+    frames = df_spots["FRAME"].unique()
+    for frame in frames:
+        spots_in_frame = df_spots[df_spots["FRAME"] == frame]
+        frame_tag = ET.SubElement(all_spots, "SpotsInFrame", {"frame": str(frame)})
+        for _, spot in spots_in_frame.iterrows():
+            spot_attrib = {
+                "ID": str(spot["ID"]),
+                "name": spot["name"],
+                "POSITION_X": str(spot["POSITION_X"]),
+                "POSITION_Y": str(spot["POSITION_Y"]),
+                "POSITION_T": str(spot["POSITION_T"]),
+                "FRAME": str(spot["FRAME"]),
+                "VISIBILITY": str(spot["VISIBILITY"]),
+            }
+            ET.SubElement(frame_tag, "Spot", spot_attrib)
+
+    print(df_spots.head())
+
+    return all_spots
+
+
+def assign_track_ids(epic, df_spots):
+    """Assign track IDs to spots based on their labels and divisions."""
+
+    return df_spots
+
+
+def build_all_tracks_tag(epic, df_spots):
+    """Build the AllTracks tag for TrackMate XML."""
+    all_tracks = ET.Element("AllTracks")
+    return all_tracks
+
+
 def build_model_tag(epic):
     """Build the Model tag for TrackMate XML."""
     model = ET.Element("model")
@@ -45,13 +99,9 @@ def build_model_tag(epic):
     model.append(build_feat_declaration_tag())
 
     print("Tracked?", epic.tracked)
-    # Numpy array with columns: label, pos_t, pos_x, pos_y
-    track_data = epic.tracking.track_data
-    print("Track data:", track_data)
-    print(len(track_data), "spots tracked")
-
-    all_spots = ET.SubElement(model, "AllSpots", {"nspots": str(len(track_data))})
-    all_tracks = ET.SubElement(model, "AllTracks")
+    df_spots = build_spots_df(epic)
+    model.append(build_all_spots_tag(df_spots))
+    model.append(build_all_tracks_tag(epic, df_spots))
     filtered_tracks = ET.SubElement(model, "FilteredTracks")
     return model
 
