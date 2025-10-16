@@ -88,6 +88,35 @@ def assign_track_ids(epic, df_spots):
 def build_all_tracks_tag(epic, df_spots):
     """Build the AllTracks tag for TrackMate XML."""
     all_tracks = ET.Element("AllTracks")
+    divisions = epic.tracking.graph  # dict of {daughter: mother}
+    print(divisions)
+    edges_data = [{"daughter": daughter, "mother": mother} for daughter, mothers in divisions.items() for mother in mothers]
+    df_edges = pd.DataFrame(edges_data)
+    # Labels stay the same until there is a division. But spots ID are unique.
+    # It means that in df_spots, labels appears multiple times. Because of this
+    # we cannot easily map between df_spots and df_edges. So we create intermediary
+    # columns to ease the mapping.
+    df_spots["first_frame"] = df_spots.groupby("label")["FRAME"].transform("min")
+    df_spots["last_frame"] = df_spots.groupby("label")["FRAME"].transform("max")
+    # A daughter appears at the first frame of its label.
+    df_spots["daughter"] = df_spots["first_frame"] == df_spots["FRAME"]
+    df_spots["mother"] = df_spots["last_frame"] == df_spots["FRAME"]
+    df_spots.drop(columns=["first_frame", "last_frame"], inplace=True)
+    # Now we can map between df_spots and df_edges.
+    # The SPOT_SOURCE_ID is the spot ID of the matching label that is a mother.
+    df_edges["SPOT_SOURCE_ID"] = df_edges["mother"].map(df_spots[df_spots["mother"]].set_index("label")["ID"])
+    # The SPOT_TARGET_ID is the spot ID of the matching label that is a daughter.
+    df_edges["SPOT_TARGET_ID"] = df_edges["daughter"].map(df_spots[df_spots["daughter"]].set_index("label")["ID"])
+    df_edges.drop(columns=["daughter", "mother"], inplace=True)
+    # We can have NaN if a label has no mother (appears at first frame)
+    # or no daughter (disappears at last frame). We drop these edges.
+    df_edges.dropna(inplace=True)
+    # Convert to int in case of NaN.
+    df_edges["SPOT_SOURCE_ID"] = df_edges["SPOT_SOURCE_ID"].astype(int)
+    df_edges["SPOT_TARGET_ID"] = df_edges["SPOT_TARGET_ID"].astype(int)
+
+    print(df_edges.head())
+
     return all_tracks
 
 
