@@ -122,6 +122,7 @@ class EpiCure():
         self.nframes = self.imgshape[0]
         return caxis, cval
 
+
     def quantiles(self):
         return tuple(np.quantile(self.img, [0.01, 0.9999]))
 
@@ -163,6 +164,12 @@ class EpiCure():
     def set_chanel( self, chan, chanaxis ):
         """ Update the movie to the correct chanel """
         self.img = np.rollaxis(np.copy(self.mov), chanaxis, 0)[chan]
+        if len(self.img.shape) == 2:
+            self.img = np.expand_dims(self.img, axis=0)
+            ## udpate the image shape informations
+            self.imgshape = self.img.shape
+            self.imgshape2D = self.imgshape[1:3]
+            self.nframes = self.imgshape[0]
         self.main_channel = chan
         if self.viewer is not None:
             mview = self.viewer.layers["Movie"]
@@ -173,15 +180,21 @@ class EpiCure():
 
     def add_other_chanels(self, chan, chanaxis): 
         """ Open other channels if option selected """
-        self.others = np.delete(self.mov, chan, axis=chanaxis)
+        others_raw = np.delete(self.mov, chan, axis=chanaxis)
+        self.others = []
         self.others_chanlist = []
         if self.others is not None:
-            self.others = np.rollaxis(self.others, chanaxis, 0)
-            for ochan in range(self.others.shape[0]):
+            others_raw = np.rollaxis(others_raw, chanaxis, 0)
+            for ochan in range(others_raw.shape[0]):
                 purechan = ochan
                 if purechan >= chan:
                     purechan = purechan + 1
                 self.others_chanlist.append(purechan)
+                if len(others_raw[ochan].shape) == 2:
+                    expanded = np.expand_dims(others_raw[ochan], axis=0)
+                    self.others.append( expanded )
+                else:
+                    self.others.append( others_raw[ochan] )
                 mview = self.viewer.add_image( self.others[ochan], name="MovieChannel_"+str(purechan), blending="additive", colormap="gray" )
                 mview.contrast_limits=tuple(np.quantile(self.others[ochan],[0.01, 0.9999]))
                 mview.gamma=0.95

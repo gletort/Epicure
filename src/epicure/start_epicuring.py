@@ -137,6 +137,7 @@ def start_epicure():
         Epic.set_verbose( verbose_level )
         Epic.nparallel = nbparallel_threads
         #Epic.load_segmentation(segmentation_file)
+        #Epic.check_shape()
         Epic.set_thickness( junction_half_thickness )
         Epic.set_scales(scale_xy, timeframe, unit_xy, unit_t)
         Epic.set_scalebar( show_scale_bar )
