@@ -25,6 +25,7 @@ class Editing( QWidget ):
         self.shapelayer_name = "ROIs"
         self.grouplayer_name = "Groups"
         self.updated_labels = None   ## keep which labels are being edited
+        self.seed_active = False ## if place seed option is on
 
         layout = wid.vlayout()
         
@@ -530,9 +531,17 @@ class Editing( QWidget ):
         
         @self.epicure.seglayer.bind_key( sseed["new seed"]["key"], overwrite=True )
         def place_seed(layer):
+            if self.seed_active:
+                ## if option is currently on, stop it
+                self.end_place_seed()
+                return
+            if "Seeds" not in self.viewer.layers:
+                self.create_seedlayer()
+                ut.set_active_layer( self.viewer, "Segmentation" )
             ## desactivate other click-binding
             self.old_mouse_drag = self.epicure.seglayer.mouse_drag_callbacks.copy()
             self.epicure.seglayer.mouse_drag_callbacks = []
+            self.seed_active = True
             ut.show_info("Left-click to place a new seed")
 
             @self.epicure.seglayer.mouse_drag_callbacks.append
@@ -1116,8 +1125,11 @@ class Editing( QWidget ):
         
     def end_place_seed(self):
         """ Finish placing seeds mode """
+        if not self.seed_active:
+            return
         if self.old_mouse_drag is not None:
             self.epicure.seglayer.mouse_drag_callbacks = self.old_mouse_drag
+            self.seed_active = False
             ut.show_info("End seed")
         ut.set_active_layer( self.viewer, "Segmentation" )
 
@@ -1140,6 +1152,7 @@ class Editing( QWidget ):
         if not "Seeds" in self.viewer.layers:
             ut.show_warning("No seeds placed")
             return
+        self.end_place_seed()
         if len(self.viewer.layers["Seeds"].data) <= 0:
             ut.show_warning("No seeds placed")
             return
@@ -1164,7 +1177,8 @@ class Editing( QWidget ):
         self.reset_seeds()
         ## update the list of tracks with the potential new cells
         self.epicure.added_labels_oneframe( tframe, before_seeding, segBB )
-        self.end_place_seed()
+        #self.end_place_seed()
+        ut.set_active_layer( self.viewer, "Segmentation" )
         self.epicure.seglayer.refresh()
 
     def crop_around_seeds( self, tframe ):

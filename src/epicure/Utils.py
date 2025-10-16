@@ -193,7 +193,11 @@ def set_visibility(viewer, layname, vis):
 
 def remove_layer(viewer, layname):
     if layname in viewer.layers:
-        viewer.layers.remove(layname)
+        try:
+            viewer.layers.remove(layname)
+        except Exception as e:
+            print("Remove of layer incomplete")
+            print(e)
 
 def remove_widget(viewer, widname):
     if widname in viewer.window._dock_widgets:
