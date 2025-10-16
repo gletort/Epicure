@@ -16,9 +16,11 @@ from scipy.ndimage import generate_binary_structure as ndi_structure
 import pandas as pd
 from epicure.laptrack_centroids import LaptrackCentroids
 import tifffile as tif # type: ignore
+import napari
 from napari.utils import progress # type: ignore
 from magicgui.widgets import TextEdit
 from joblib import Parallel, delayed
+from packaging.version import Version
 
 try:
     from skimage.graph import RAG
@@ -69,6 +71,11 @@ def close_progress( viewer, progress_bar ):
     """ Close the progress bar """
     progress_bar.close()
     show_progress( viewer, False)
+
+#### Handle versions of napari
+def version_napari_above( compare_version ):
+    """ Compare if the current version of napari is above given version """
+    return Version(napari.__version__) > Version(compare_version)
 
 def get_directory(imagepath):
     return os.path.dirname(imagepath)

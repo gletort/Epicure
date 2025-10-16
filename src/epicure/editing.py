@@ -1086,7 +1086,11 @@ class Editing( QWidget ):
 
     def create_seedlayer(self):
         pts = []
-        points = self.viewer.add_points( np.array(pts), face_color="blue", size = 7,  edge_width=0, name="Seeds", scale=self.viewer.layers["Segmentation"].scale )
+        ## handle change of parameter name in napari versions
+        if ut.version_napari_above("0.4.19"):
+            self.viewer.add_points( np.array(pts), face_color="blue", size = 7,  border_width=0, name="Seeds", scale=self.viewer.layers["Segmentation"].scale )
+        else:
+            self.viewer.add_points( np.array(pts), face_color="blue", size = 7,  edge_width=0, name="Seeds", scale=self.viewer.layers["Segmentation"].scale )
 
     def reset_seeds(self):
         ut.remove_layer(self.viewer, "Seeds")
