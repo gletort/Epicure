@@ -1210,12 +1210,24 @@ class Editing( QWidget ):
         markers[maskBB==0] = -1 ## block filled area 
         ## fill from seeds with diffusion method
         splitted = random_walker( imgBB, labels=markers, beta=700, tol=0.01 )
-        splitted = label(splitted)
-        new_labels = np.unique(markers)
+        new_labels = list(np.unique(markers))
+        new_labels.remove(-1)
+        new_labels.remove(0)
         i = 0
         lablist = set( splitted.flatten() )
+        #print(lablist)
+        #print(new_labels)
         for lab in lablist:
             if lab > 0:
+                mask = (splitted == lab)
+                labels_mask = label(mask)                       
+                ## keep only biggest region if the label is splitted
+                regions = ut.labels_properties(labels_mask)
+                if len(regions) > 2:
+                    regions.sort(key=lambda x: x.area, reverse=True)
+                    if len(regions) > 1:
+                        for rg in regions[1:]:
+                            splitted[rg.coords[:,0], rg.coords[:,1]] = 0
                 splitted[splitted==lab] = new_labels[i]
                 i = i + 1
         segBB[(maskBB>0)*(splitted>0)] = splitted[(maskBB>0)*(splitted>0)]
