@@ -1,12 +1,21 @@
 from datetime import datetime
-from fileinput import filename
 from pathlib import Path
 from typing import Dict, List
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from scipy.cluster.hierarchy import DisjointSet
+from skimage.measure import find_contours
+
+import epicure.Utils as ut
+
+
+# TODO: deal with groups (store in MANUAL_SPOT_COLOR)
+
 
 SPOT_FEATS = [
     {"feature": "POSITION_X", "name": "X", "shortname": "X", "dimension": "POSITION", "isint": "false"},
@@ -53,16 +62,72 @@ def build_spots_df(epic):
     df_spots["POSITION_T"] = df_spots["FRAME"] * epic.epi_metadata.get("ScaleT", 1)
     df_spots["VISIBILITY"] = 1
     df_spots.drop(columns=["pos_x", "pos_y"], inplace=True)
-    # TODO: ROI_N_POINTS is missing
 
     return df_spots
 
 
-def build_all_spots_tag(df_spots):
+def get_cell_contour(seg_array, label, frame):
+    """Get the contours of the cell with the given label in the given frame."""
+    spot_seg = seg_array[frame, :, :] == label
+    # print(spot_seg.dtype)
+    # Pad to avoid contours on the border (skimage.measure.find_contours)
+    # spot_seg = np.pad(spot_seg, pad_width=1, mode='constant', constant_values=0)
+    spot_seg_uint8 = spot_seg.astype(np.uint8)
+    # print(spot_seg_uint8.dtype)
+
+    if np.sum(spot_seg) > 0:
+        # contours = find_contours(spot_seg)
+        contours, _ = cv2.findContours(spot_seg_uint8, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        # print(type(contours))
+        # if label == 125 and frame == 0:
+        #     contours = contours[:-1]  # hack to remove spurious contour
+
+        # plt.show()
+        # print(contours)
+        assert len(contours) > 0, f"No contour found for label {label} in frame {frame}"
+        # assert len(contours) < 2, f"More than one contour found for label {label} in frame {frame}"
+        # if len(contours) > 1:
+        #     fig, ax = plt.subplots(1, 1)
+        #     ax.imshow(spot_seg)
+        #     # Plot each contour
+        #     for contour in contours:
+        #         contour = contour.squeeze()
+        #         ax.plot(contour[:, 0], contour[:, 1], linewidth=2)
+
+        #     plt.show()
+
+        return contours[0].squeeze()
+    return None
+
+
+def build_roi_contours(epic, df_spots):
+    """Build a mapping from spot ID to its ROI contour."""
+    roi_contours = {}
+    seg_layer = epic.outputing.seglayer.data
+    print(type(seg_layer))
+    print(seg_layer.shape)
+    for _, spot in df_spots.iterrows():
+        contour = get_cell_contour(seg_layer, spot["label"], spot["FRAME"])
+        if contour is not None:
+            # Convert from pixels to space units.
+            # TODO: is ScaleXY the pixel size or the conversion factor?
+            contour[:, 0] *= epic.epi_metadata.get("ScaleXY", 1)
+            contour[:, 1] *= epic.epi_metadata.get("ScaleXY", 1)
+            # Convert contour from absolute to relative coordinates (to the cell XY position).
+            contour[:, 0] -= spot["POSITION_X"]
+            contour[:, 1] -= spot["POSITION_Y"]
+            # Flatten contour to a 1D array as expected by TrackMate.
+            contour = contour.flatten()
+            roi_contours[spot["ID"]] = contour
+            print(spot["ID"], spot["label"], spot["FRAME"], contour.shape)
+    return roi_contours
+
+
+def build_all_spots_tag(df_spots, roi_n_points):
     """Build the AllSpots tag for TrackMate XML."""
     all_spots = ET.Element("AllSpots", {"nspots": str(len(df_spots))})
-
     frames = df_spots["FRAME"].unique()
+    print(roi_n_points)
     for frame in frames:
         spots_in_frame = df_spots[df_spots["FRAME"] == frame]
         frame_tag = ET.SubElement(all_spots, "SpotsInFrame", {"frame": str(frame)})
@@ -70,13 +135,21 @@ def build_all_spots_tag(df_spots):
             spot_attrib = {
                 "ID": str(spot["ID"]),
                 "name": spot["name"],
+                "EpiCure_label": str(spot["label"]),
                 "POSITION_X": str(spot["POSITION_X"]),
                 "POSITION_Y": str(spot["POSITION_Y"]),
                 "POSITION_T": str(spot["POSITION_T"]),
                 "FRAME": str(spot["FRAME"]),
                 "VISIBILITY": str(spot["VISIBILITY"]),
             }
-            ET.SubElement(frame_tag, "Spot", spot_attrib)
+
+            # Add ROI contour if available.
+            if spot["ID"] in roi_n_points:
+                spot_attrib["ROI_N_POINTS"] = str(roi_n_points[spot["ID"]].shape[0] // 2)
+
+            spot_tag = ET.SubElement(frame_tag, "Spot", spot_attrib)
+            if spot["ID"] in roi_n_points:
+                spot_tag.text = " ".join(map(str, roi_n_points[spot["ID"]]))
 
     return all_spots
 
@@ -217,7 +290,8 @@ def build_model_tag(epic):
 
     print("Tracked?", epic.tracked)
     df_spots = build_spots_df(epic)
-    model.append(build_all_spots_tag(df_spots))
+    cell_contours = build_roi_contours(epic, df_spots)
+    model.append(build_all_spots_tag(df_spots, cell_contours))
     df_edges = build_all_tracks_data(epic, df_spots)
     model.append(build_all_tracks_tag(df_edges))
     ET.SubElement(model, "FilteredTracks")
@@ -251,10 +325,10 @@ def build_settings_tag(epic):
     return settings
 
 
-def build_gui_state_tag():
-    """Build the GUIState tag for TrackMate XML."""
-    gui_state = ET.Element()
-    return gui_state
+# def build_gui_state_tag():
+#     """Build the GUIState tag for TrackMate XML."""
+#     gui_state = ET.Element("GUIState")
+#     return gui_state
 
 
 def pretty_print_xml(element):
