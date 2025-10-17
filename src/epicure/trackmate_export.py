@@ -1,7 +1,9 @@
 from datetime import datetime
+from fileinput import filename
+from pathlib import Path
+from typing import Dict, List
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
-from typing import Dict, List
 
 import pandas as pd
 from scipy.cluster.hierarchy import DisjointSet
@@ -223,6 +225,38 @@ def build_model_tag(epic):
     return model
 
 
+def build_settings_tag(epic):
+    """Build the Settings tag for TrackMate XML."""
+    settings = ET.Element("Settings")
+    img_path = Path(epic.epi_metadata["MovieFile"])
+    ET.SubElement(
+        settings,
+        "ImageData",
+        {
+            "filename": img_path.name,
+            "folder": str(img_path.parent),
+            "width": str(epic.imgshape2D[1]),
+            "height": str(epic.imgshape2D[0]),
+            "nslices": "1",
+            "nframes": str(epic.nframes),
+            "pixelwidth": str(epic.epi_metadata.get("ScaleXY", 1)),
+            "pixelheight": str(epic.epi_metadata.get("ScaleXY", 1)),
+            "voxeldepth": "1",
+            "timeinterval": str(epic.epi_metadata.get("ScaleT", 1)),
+        },
+    )
+    ET.SubElement(settings, "InitialSpotFilter")
+    ET.SubElement(settings, "SpotFilterCollection")
+    ET.SubElement(settings, "TrackFilterCollection")
+    return settings
+
+
+def build_gui_state_tag():
+    """Build the GUIState tag for TrackMate XML."""
+    gui_state = ET.Element()
+    return gui_state
+
+
 def pretty_print_xml(element):
     """Pretty print an XML element."""
     rough_string = ET.tostring(element, encoding="utf-8")
@@ -238,6 +272,10 @@ def save_trackmate_xml(epic, outname):
     log.text = f"Created by EpiCure on {now.strftime('%Y-%m-%d %H:%M:%S')}"
     model = build_model_tag(epic)
     root.append(model)
+    settings = build_settings_tag(epic)
+    root.append(settings)
+    ET.SubElement(root, "GUIState", {"state": "ConfigureViews"})
+    ET.SubElement(root, "DisplaySettings")
     # tree = ET.ElementTree(root)
 
     pretty_xml = pretty_print_xml(root)
